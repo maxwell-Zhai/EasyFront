@@ -1,0 +1,13 @@
+---
+const { href } = Astro.props
+---
+<div class="nav-links">
+  <a href="/EasyFront">首页</a>
+  <a href={href}>文档</a>
+</div>
+
+<style>
+  a {
+    color: #551A8B;
+  }
+</style>

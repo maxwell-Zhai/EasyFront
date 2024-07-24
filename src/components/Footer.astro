@@ -1,0 +1,20 @@
+---
+import Social from './Social.astro';
+---
+
+<style>
+    footer {
+      text-align: center;
+      position: relative; 
+      width: 100%;
+      /* 设置一个隐藏的定位元素用来决定footer的显示 */
+      margin-top: auto; /* 推动footer到页面底部 */
+      box-sizing: border-box;
+    }
+</style>
+
+<footer>
+    <Social platform="github" username="maxwell-zhai" />
+    <Social platform="npmjs" username="~maxwell-zhai" />
+</footer>
+
