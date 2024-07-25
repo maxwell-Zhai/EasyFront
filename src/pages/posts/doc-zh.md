@@ -100,32 +100,34 @@ This reverts commit abc1234.
 将easyfront进行本地安装
 
 ```bash
-npm install easyfront --save-dev
+npm install @maxwell-zhai/easyfront --save-dev
 
-yarn add easyfront --dev
+yarn add @maxwell-zhai/easyfront --dev
 
-pnpm add easyfront --save-dev
+pnpm add @maxwell-zhai/easyfront --save-dev
 ```
 
 ### CLI
 
-首先，你可以直接在命令行去使用eslint、prettier、stylelint去检查规范你的项目，无需进行任何额外配置操作。
-
 > 请将你的项目统一放在src目录下
 
-1. `ESLint`：你可以直接运行 ESLint 检查 `src` 目录下的所有 TypeScript 文件：
+##### ESLint
+
+你可以直接运行 ESLint 检查 `src` 目录下的所有 TypeScript 文件：
 
 ```bash
 npx easyfront eslint
 ```
 
-​  或者，你也可以指定特定的文件或目录：
+或者，你也可以指定特定的文件或目录：
 
-  ```bash
-  npx easyfront eslint src/file.ts
-  ```
+```bash
+npx easyfront eslint src/file.ts
+```
 
-2. `prettier`：你可以直接运行 Prettier 格式化 `src` 目录下的所有 TypeScript 文件：
+##### Prettier
+
+你可以直接运行 Prettier 格式化 `src` 目录下的所有 TypeScript 文件：
 
 ```bash
 npx easyfront prettier
@@ -137,45 +139,46 @@ npx easyfront prettier
 npx easyfront prettier src/file.ts
 ```
 
-3. stylelint：你需要先安装stylelint，然后运行 Stylelint 检查根目录下的所有 Less 文件：
+##### StyleLint
+
+你可以直接运行 Stylelint 检查根目录下的所有 Less 文件：
 
 ```bash
 pnpm add -d stylelint
 npx easyfront stylelint
 ```
 
-   同样地，你也可以指定特定的文件或目录：
+同样地，你也可以指定特定的文件或目录：
 
-   ```bash
-   npx easyfront stylelint styles/file.less
-   ```
+```bash
+npx easyfront stylelint styles/file.less
+```
 
-接下来，你可以快速创建commit message并自动进行检查，但是你需要一些额外的工作：
+##### commit
 
-> **注意**：如果你自己进行了额外的不符合规则的commit提交，则会报错！
+接下来，你可以快速创建commit message, 工具会引导你通过交互式提示输入提交信息，确保提交信息符合规范。：
 
-工具会引导你通过交互式提示输入提交信息，确保提交信息符合规范。
 你可以直接使用以下命令来辅助生成commit message：
 
 ```bash
 npx easyfront commit
 ```
 
-如果你需要使用commitlint对你的commit message进行检验，那么请进行如下操作：
-你需要先下载husky，并对其进行初始化
+> 提示: 在commit之前别忘了将文件提交到暂存区哦
+
+##### commitlint
+
+如果你需要使用**commitlint**对你的commit message进行检验，那么请进行如下操作：
+
+> **注意**：如果你自己进行了额外的不符合规则的commit提交，则会报错！
+
+首先需要初始化husky
 
 ```bash
-pnpm add -d husky 
-pnpm easyfront init-hooks
+npx easyfront init-hooks
 ```
 
 > **注意**：初始化后将husky中的pre-commit删除，因为我们暂时没有用到pre-commit
-
-接着在你的项目中安装commitlint
-
-```bash
-pnpm add -d commitlint
-```
 
 然后你需要在你的package.json的script中添加如下代码：
 
@@ -185,7 +188,9 @@ pnpm add -d commitlint
 
 现在，commitlint就可以在你提交commit时对你的message进行检查了！
 
-好了，一切准备就绪，你可以使用release去帮助你发布新版本了！
+##### release
+
+好了，一切准备就绪，你可以使用**release**去帮助你发布新版本了！
 
 ```bash
 npx easyfront release
@@ -219,10 +224,6 @@ module.exports = {
   "plugins": ["prettier-plugin-tailwindcss"]
 }
 ```
-
-### 贡献指南
-
-如果你有兴趣贡献代码，请阅读我们的 [贡献指南](CONTRIBUTING.md)。
 
 ### 许可证
 
