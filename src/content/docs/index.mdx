@@ -1,0 +1,28 @@
+---
+title: EasyFront
+description: 一个非常有用的前端工程化工具.
+template: splash
+hero:
+  tagline: 一站式前端代码工程规范工具!
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: 开始使用
+      link: /EasyFront/guides/example/
+      icon: right-arrow
+      variant: primary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What can it do?
+
+<CardGrid stagger>
+	<Card title="配置简化" icon="pencil">
+		对于开发者，它可以尽可能的减少对前端工程质量工具的配置
+	</Card>
+
+	<Card title="多功能集合" icon="setting">
+		除了 Eslint 外，它还有 Prettier、Stylelint、Commitizen 它甚至可以一键发版并生成 CHANGELOG😋
+	</Card>
+</CardGrid>
